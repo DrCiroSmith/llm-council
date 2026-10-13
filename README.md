@@ -2,7 +2,7 @@
 
 ![llmcouncil](header.jpg)
 
-The idea of this repo is that instead of asking a question to your favorite LLM provider (e.g. OpenAI GPT 5.1, Google Gemini 3.0 Pro, Anthropic Claude Sonnet 4.5, xAI Grok 4, eg.c), you can group them into your "LLM Council". This repo is a simple, local web app that essentially looks like ChatGPT except it uses OpenRouter to send your query to multiple LLMs, it then asks them to review and rank each other's work, and finally a Chairman LLM produces the final response.
+The idea of this repo is that instead of asking a question to your favorite LLM provider (e.g. OpenAI GPT 5.1, Google Gemini 3.0 Pro, Anthropic Claude Sonnet 4.5, xAI Grok 4, etc.), you can group them into your "LLM Council". This repo is a simple, local web app that essentially looks like ChatGPT except it uses OpenRouter to send your query to multiple LLMs, it then asks them to review and rank each other's work, and finally a Chairman LLM produces the final response.
 
 In a bit more detail, here is what happens when you submit a query:
 
@@ -20,12 +20,12 @@ This project was 99% vibe coded as a fun Saturday hack because I wanted to explo
 
 The project uses [uv](https://docs.astral.sh/uv/) for project management.
 
-**Backend:**
+**Backend (project root):**
 ```bash
 uv sync
 ```
 
-**Frontend:**
+**Frontend (`frontend/`):**
 ```bash
 cd frontend
 npm install
@@ -78,6 +78,12 @@ npm run dev
 ```
 
 Then open http://localhost:5173 in your browser.
+
+## Repository Structure
+
+- `backend/` - FastAPI API, council orchestration, OpenRouter client, and JSON storage
+- `frontend/` - React + Vite web UI
+- `data/conversations/` - local JSON conversation files (created at runtime)
 
 ## Tech Stack
 
